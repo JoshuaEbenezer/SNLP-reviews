@@ -23,7 +23,7 @@ tfidf_transformer = TfidfTransformer().fit(X_train_counts)
 X = tfidf_transformer.transform(X_train_counts)
 print (tfidf_transformer.vocabulary_)
 
-# #word count
+# optional - add #word count as a feature
 # X2 = (df.loc[:,'word_count'].values)
 
 # print (X2.max())
@@ -32,12 +32,12 @@ print (tfidf_transformer.vocabulary_)
 #X = np.concatenate((X1,X2))
 
 
-# cont_var_y = df.loc[:,'useful'].values
+cont_var_y = df.loc[:,'useful'].values
 
-# lab_enc = preprocessing.LabelEncoder()
-# Y = lab_enc.fit_transform(cont_var_y)
+lab_enc = preprocessing.LabelEncoder()
+Y = lab_enc.fit_transform(cont_var_y)
 
-# logreg = linear_model.LogisticRegression()
-# scores = cross_val_score(logreg,X,Y,cv=5)
+logreg = linear_model.LogisticRegression()
+scores = cross_val_score(logreg,X,Y,cv=5)
 
-# print (scores)
+print (scores)
