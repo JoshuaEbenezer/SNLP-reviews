@@ -5,7 +5,7 @@ df = pd.read_csv('langtest.csv')
 for index,row in df.iterrows():
 	print (index)
 	flag = 0
-	fileobj = open('test.txt');
+	fileobj = open('rest_ids.txt');
 	for line in fileobj:
 		line = line.rstrip('\n')
 		print (line)
